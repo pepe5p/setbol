@@ -1,0 +1,63 @@
+.spinner
+	overflow: hidden
+	background-color: #fff
+
+.spinner > p
+	margin: 0
+	white-space: nowrap
+	&:nth-of-type(1)
+		animation: spin1 30s linear infinite
+		@media screen and (max-width: $small)
+			animation: mobspin1 30s linear infinite
+		&:hover
+			animation-play-state: paused
+	&:nth-of-type(2)
+		animation: spin2 30s linear infinite
+		@media screen and (max-width: $small)
+			animation: mobspin2 30s linear infinite
+		&:hover
+			animation-play-state: paused
+
+.spinner a
+	height: 6vw
+	@media screen and (max-width: $small)
+		height: 18vw
+	display: inline-block
+	margin: 0 1vw
+
+.spinner a img
+	height: 100%
+	-webkit-filter: grayscale(100%)
+	filter: grayscale(100%)
+	transition: filter .5s
+	&:hover
+		-webkit-filter: grayscale(0)
+		filter: grayscale(0)
+
+@keyframes spin1
+	0% 
+		transform: translateX(0)
+	100% 
+		transform: translateX(-167.5%)
+	//4019px with margins for 1200px width devices
+
+@keyframes mobspin1
+	0% 
+		transform: translateX(0)
+	100% 
+		transform: translateX(-448.15%)
+	//2868.2px with margins for 320px width devices
+
+@keyframes spin2
+	0% 
+		transform: translateX(0)
+	100% 
+		transform: translateX(-185%)
+	//4434px with margins for 1200px width devices
+
+@keyframes mobspin2
+	0% 
+		transform: translateX(0)
+	100% 
+		transform: translateX(-507.53%)
+	//3248.2px with margins for 320px width devices

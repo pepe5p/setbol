@@ -1,0 +1,99 @@
+.togglebtn
+	display: none
+	z-index: 100
+	position: fixed
+	top: 5px
+	left: 5px
+	padding: 0
+	width: 40px
+	height: 40px
+	text-align: center
+	border: none
+	border-radius: 50%
+	background-color: $transparentwhite
+	&:focus
+		outline: none
+
+.navbar
+	padding: 0
+
+#navigation
+	z-index: 99
+	width: 100%
+	position: fixed
+	top: 0
+	height: 40px
+	line-height: 40px
+	will-change: transform
+	transition: transform .3s ease-in-out, background-color .5s, border-bottom .5s
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+.fill
+	border-bottom: 3px solid $dblue
+	background-color: $transparentwhite
+
+.nav
+	max-width: 1200px
+	left: 50%
+	transform: translateX(-50%)
+	color: $dblue
+	font-weight: 700
+	text-align: center
+	& .flipbox
+		height: 40px
+	& .up
+		transform: translateZ(20px)
+		color: $dblue
+	& .down
+		height: 40px
+		top: -20px
+		padding: 0
+		background-color: $transparentblue
+		border-bottom: 3px solid $white
+		color: $white
+		+font-size(15px)
+	& a
+		color: $white
+		text-decoration: none
+		display: block
+		width: 100%
+		height: 100%
+	& > li
+		color: rgba(0, 0, 0, 0)
+		position: relative
+		@media screen and (min-width: $small)
+			&:hover > .item
+				visibility: visible
+				opacity: 1
+		&:hover > .flipbox
+			transform: rotateX( -90deg)
+	& .item
+		padding: 10px 20px
+		position: fixed
+		+font-size(15px)
+		background-color: $transparentblue
+		list-style-type: none
+		text-align: left
+		visibility: hidden
+		opacity: 0
+		transition: visibility 0s, opacity 0.2s linear
+	& .item > li
+		height: 30px
+		line-height: 30px
+
+@media screen and (max-width: $small)
+	#navigation
+		height: auto !important
+		background-color: $transparentwhite
+		transform: translateX(-100%)
+
+	.fill
+		border-bottom: none
+
+	.togglebtn
+		display: block

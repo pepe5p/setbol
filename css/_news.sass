@@ -1,0 +1,142 @@
+.banner
+	overflow: hidden
+	&::before
+		padding-top: 222.4%
+
+.banner img
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+
+.section .box
+	color: $white
+	overflow: hidden
+	cursor: pointer
+	font-size: 1.5vw
+	@media screen and (max-width: $small)
+		font-size: 6.5vw
+
+.section .last
+	@media screen and (max-width: $small)
+		&::before
+			padding-top: 25%
+
+.box iframe, .box .tile, .box .desc
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+
+.box .desc
+	left: -100%
+	z-index: 50
+	background-color: $transparentblue
+	will-change: transform
+	transition: transform .2s ease-in-out
+
+.last .gradient
+	border: 0px solid $transparentwhite
+	background-image: linear-gradient(to bottom right, $dblue, $lblue)
+	transition: border-width .2s ease-in
+
+.box .type
+	display: inline-block
+	z-index: 60
+	position: absolute
+	top: 0
+	left: 0
+	font-size: 2em
+	text-align: center
+	color: $dblue
+	transition: color .15s ease-in-out
+
+.box .type .date
+	display: inline-block
+	font-size: .4em
+	font-weight: 700
+
+.box .text
+	position: absolute
+	text-align: center
+	top: 50%
+	right: 0
+	width: 100%
+	transform: translateY(-50%)
+	overflow: hidden
+	white-space: nowrap
+
+.box .more
+	z-index: 50
+	position: absolute
+	width: 1.75em
+	top: 50%
+	right: 0
+	transform: translateY(-50%)
+	font-size: 2em
+	text-align: center
+	transition: right .2s ease-in
+
+.box .tile
+	z-index: 40
+	&:hover img
+		transform: scale(1.2)
+	&:hover .desc
+		transform: translateX(100%)
+	&:hover .type
+		color: $white
+
+@media screen and (min-width: 780px)
+	.last .gradient
+		&:hover
+			border-width: 15px
+
+.box img
+	width: 100%
+	height: 100%
+	will-change: transform
+	transition: transform .2s ease-out
+	
+.newspanel
+	& input[type="search"], & select, & .button
+		font-weight: 700
+		margin: 10px 0
+		height: 40px
+	& input[type="search"], & select
+		border: 2px dotted $dblue
+		border-right: none
+		background: transparent
+		&:focus
+			outline: none
+			border-style: solid
+			border-right: none
+	& select, & .button
+		width: 95%
+	& input[type="search"]
+		width: 80%
+		margin-right: 0
+		padding: 0 10px
+		display: inline-block
+	& .search
+		width: 15%
+		display: inline-block
+		transform: translateX(-5px) scale(1.01)
+	& .button
+		padding: 0
+		color: $white
+		cursor: pointer
+		border: none
+		background-image: linear-gradient(to bottom right, $dblue, $lblue)
+		outline: 0 solid $transparentblue
+		transition: outline-width .1s
+		&:hover
+			outline-width: 4px
+		&:focus
+			color: $transparentwhite
+			outline-color: $green

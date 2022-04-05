@@ -1,0 +1,86 @@
+.jambox
+	width: 100%
+	position: relative
+	background-color: $white
+	&::before
+		content: ""
+		display: block
+		padding-top: 40%
+
+.jam, .jaminfo, .jam .category, .jam .team, .jam .date, .jam .opponent, .jam .score, .jam .sets
+	position: absolute
+	text-align: center
+
+.jam
+	top: 3%
+	right: 1%
+	bottom: 3%
+	left: 1%
+	color: $dblue
+	border: 2px dotted $dblue
+	font-size: 1.5vw
+	@media screen and (max-width: $small)
+		font-size: 5vw
+
+.jaminfo
+	top: 15%
+	width: 90%
+	left: 5%
+	right: 5%
+	height: 65%
+	position: relative
+	border-bottom: 2px solid $dblue
+
+.jam .category, .jam .date
+	height: 15%
+	font-size: 0.7em
+
+.jam .team, .jam .opponent
+	top: 0
+	width: 20%
+	height: 100%
+
+.jam .team
+	left: 0
+
+.jam .opponent
+	right: 0
+
+.jam .team img, .jam .opponent img
+	width: 100%
+	height: 70%
+
+.jam .name
+	width: 100%
+	height: 30%
+	font-weight: 700
+	font-size: 0.7em
+	line-height: 2.5em
+	white-space: nowrap
+	overflow: hidden
+
+.jam .category, .jam .date, .jam .score
+	left: 50%
+	transform: translateX(-50%)
+	width: 60%
+
+.jam .category
+	top: 0
+
+.jam .date
+	top: 15%
+
+.jam .score
+	top: 30%
+	height: 70%
+	font-weight: 700
+	font-size: 2em
+
+.jam .sets
+	width: 90%
+	height: 20%
+	left: 5%
+	right: 5%
+	bottom: 0
+	font-size: 0.9em
+	font-weight: 700

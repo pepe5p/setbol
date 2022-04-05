@@ -1,0 +1,87 @@
+.pbox
+	width: 100%
+	& .box
+		perspective: 750px
+		transform: scale(0.85)
+		&:hover .flipbox
+			transform: rotateX( -90deg)
+
+.flipbox, .flip
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	will-change: transform
+
+.flipbox
+	transition: transform .3s
+	transform-style: preserve-3d
+
+.up
+	backface-visibility: hidden
+	transform: translateZ(50px)
+	background-size: cover
+	background-position: center center
+
+.down
+	height: 100px
+	transform: rotateX(90deg)
+	top: -50px
+	padding: 10px
+
+$bigcube: 350px
+$smallcube: 250px
+
+.cubeallbox
+	margin: 50px 0
+
+.cubenavbar
+	text-align: center
+	@media screen and (min-width: $small)
+		border-right: 2px solid $dblue
+	& #sp2
+		font-weight: 700
+	& .cubenav
+		cursor: pointer
+
+.cbox
+	position: relative
+	width: 100%
+	height: $bigcube
+	@media screen and (max-width: $small)
+		height: $smallcube
+	& iframe
+		width: 100%
+		height: 100%
+		border: 2px solid $dblue
+	& .cube
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%) scale(0.75)
+		width: $bigcube
+		height: $bigcube
+		@media screen and (max-width: $small)
+			width: $smallcube
+			height: $smallcube
+		perspective: 750px
+		& .start
+			backface-visibility: hidden
+			transform: translateZ(($bigcube/2))
+			@media screen and (max-width: $small)
+				transform: translateZ(($smallcube/2))
+		& .up
+			height: $bigcube
+			@media screen and (max-width: $small)
+				height: $smallcube
+			transform: rotateX(90deg)
+			top: -($bigcube/2)
+			@media screen and (max-width: $small)
+				top: -($smallcube/2)
+		& .right
+			backface-visibility: hidden
+			transform: translateX(50%) rotateY(90deg)
